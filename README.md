@@ -77,3 +77,32 @@ Como resultado dessas ações, houve uma significativa redução na latência do
 
 **Pergunta:** Por que foi escolhido o serviço AWS SQS em vez de utilizar o Kafka?
 **Resposta:** A escolha do AWS SQS em vez do Kafka foi baseada na simplicidade de integração com o ecossistema AWS, na facilidade de uso e na robustez do serviço para cenários de mensagens assíncronas. O SQS oferece uma solução gerenciada que reduz a complexidade operacional, permitindo foco no desenvolvimento de funcionalidades em vez de gerenciar a infraestrutura de mensageria.
+
+
+## Arquitetura de eventos
+
+A arquitetura de mensageria é um padrão de design usado para comunicação assíncrona entre sistemas ou componentes de software. Ela utiliza mensagens para transmitir dados ou eventos entre produtores e consumidores, permitindo o desacoplamento e maior escalabilidade. Os principais elementos dessa arquitetura incluem:
+
+    Produtor (Producer): Responsável por enviar mensagens para o sistema de mensageria.
+
+    Consumidor (Consumer): Recebe e processa as mensagens enviadas pelo produtor.
+
+    Broker de Mensagens: Um intermediário que gerencia o envio, roteamento e armazenamento das mensagens. Exemplos incluem AWS SQS, Apache Kafka e RabbitMQ.
+
+    Filas (Queues): Estruturas onde as mensagens são armazenadas até serem consumidas.
+
+    Tópicos (Topics): Usados em sistemas de publicação/assinatura (pub/sub), onde múltiplos consumidores podem receber mensagens de um único produtor.
+
+    Mensagens: Dados ou eventos transmitidos entre os componentes.
+
+### Vantagens da Arquitetura de Mensageria
+- **Desacoplamento**: Permite que os produtores e consumidores operem de forma independente, facilitando a manutenção e evolução dos sistemas.
+- **Escalabilidade**: Suporta alta carga de mensagens e múltiplos consumidores, permitindo que o sistema cresça conforme necessário.
+- **Resiliência**: Garante entrega confiável de mensagens, mesmo em caso de falhas temporárias, através de mecanismos como retries e persistência de mensagens.
+- **Flexibilidade**: Facilita a integração de novos serviços e componentes, permitindo que diferentes partes do sistema se comuniquem de forma eficiente.
+- **Assíncrono**: Permite que as operações sejam executadas em segundo plano, melhorando a performance e a responsividade do sistema.
+
+### exemplo de uso: A arquitetura de mensageria é amplamente utilizada em sistemas distribuídos, microserviços e aplicações em nuvem, onde a comunicação assíncrona é essencial para garantir eficiência e escalabilidade. Um exemplo prático é o uso do AWS SQS para gerenciar filas de tarefas em uma aplicação web, onde as requisições dos usuários são processadas de forma assíncrona, melhorando a experiência do usuário e a performance do sistema.
+
+### Desvantagens da Arquitetura de Mensageria
+- **Complexidade**: A introdução de um sistema de mensageria pode aumentar a complexidade do sistema, exigindo mais configuração e monitoramento.
