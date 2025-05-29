@@ -20,6 +20,7 @@ Para realizar essa tarefa, tomei as seguintes ações:
 Como resultado dessas ações, houve uma significativa redução na latência do fluxo de salvamento de contatos Pix. A implementação assíncrona aumentou a eficiência geral do sistema, permitindo que ele executasse outras tarefas enquanto o salvamento ocorria em segundo plano. Além disso, o aprendizado obtido incluiu:
 - A importância de utilizar mecanismos assíncronos para melhorar a performance.
 - A necessidade de garantir robustez e segurança na comunicação entre serviços.
+- Saimos de uma media latencia de 7.74 s do efetiva para 5.09 segundos, o que representa uma redução de 34% na latência do fluxo de salvamento de contatos Pix.
 
 ---
 
